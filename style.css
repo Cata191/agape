@@ -1,0 +1,540 @@
+:root {
+    /* Paleta de colores SUTILES y OFICIALES */
+    --color-principal: #45b4ab; /* Turquesa fuerte (Para acentos y logo) */
+    --color-secundario: #7bc2db; /* Turquesa claro (Fondo de Footer) */
+    --color-acento: #f6ad7d; /* Naranja Suave / Melocotón (Para botones CTA) */
+    --color-acento-claro: #eba9a9; /* Rosa pálido (Fondo de secciones sutiles) */
+    --color-fondo: #eadecf; /* Beige/Crema (Fondo dominante) */
+    --color-texto-oscuro: #333333;
+
+    /* Fuentes */
+    --font-header: 'Lora', serif;
+    --font-body: 'Open Sans Condensed', sans-serif;
+}
+
+/* Base Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-texto-oscuro);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-header);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-principal); 
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-acento);
+}
+
+/* Colores de Fondo (Clases de utilidad) */
+.beige-bg {
+    background-color: var(--color-fondo);
+}
+
+.acento-claro-bg {
+    background-color: var(--color-acento-claro); /* Rosa Pálido */
+}
+
+/* ------------------------------------ */
+/* 1. ENCABEZADO Y NAVEGACIÓN */
+/* ------------------------------------ */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-header);
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--color-principal);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    color: var(--color-texto-oscuro);
+    margin-left: 20px;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.main-nav li a:hover {
+    color: var(--color-principal);
+}
+
+.search-icon {
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--color-principal);
+}
+
+/* ------------------------------------ */
+/* 2. SECCIÓN HERO / PORTADA */
+/* ------------------------------------ */
+.hero-section {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-image.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    background-color: rgba(51, 51, 51, 0.5); 
+    color: white;
+    padding: 20px 40px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+/* ------------------------------------ */
+/* 3. SECCIÓN DE BIENVENIDA Y LEMA */
+/* ------------------------------------ */
+.welcome-section {
+    padding: 60px 5%; 
+    text-align: center;
+}
+
+.welcome-section h2 {
+    font-size: 3em;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 30px;
+}
+
+.lema-container {
+    background-color: var(--color-acento-claro); /* Rosa Pálido Sutil */
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto 30px auto; 
+}
+
+.lema {
+    font-family: var(--font-header);
+    font-size: 1.5em;
+    font-style: italic;
+    color: var(--color-texto-oscuro);
+    line-height: 1.4;
+}
+
+.intro-text {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* ------------------------------------ */
+/* SECCIONES DE PRODUCTOS (GRID DE 2 COLUMNAS) */
+/* ------------------------------------ */
+.products-main-page {
+    padding-bottom: 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 5%;
+    align-items: flex-start;
+}
+
+.product-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+}
+
+.product-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.product-details {
+    text-align: left;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.product-details h3 {
+    font-size: 1.5em;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 5px;
+}
+
+.product-details h4 {
+    font-size: 1em;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+/* Lema Intermedio (Productos) - Usa el color Turquesa CLARO */
+.lema-section {
+    background-color: var(--color-secundario); /* Turquesa Claro Sutil */
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.lema-grande {
+    font-family: var(--font-header);
+    font-size: 2em;
+    font-style: italic;
+    color: white; 
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------ */
+/* GALERÍA DE PRODUCTOS ADICIONALES (4 COLUMNAS) */
+/* ------------------------------------ */
+.gallery-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 2.5em;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 5px;
+}
+
+.gallery-subtitle {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #555;
+    font-family: var(--font-body);
+}
+
+.product-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03);
+}
+
+.item-name {
+    font-family: var(--font-header);
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.item-collection {
+    font-size: 0.9em;
+    color: var(--color-principal);
+}
+
+/* ------------------------------------ */
+/* SECCIÓN CTA (CONTACTO EN INDEX) */
+/* ------------------------------------ */
+.contact-cta-section {
+    /* Fondo Rosa Pálido Sutil */
+    background-color: var(--color-acento-claro); 
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--color-texto-oscuro);
+}
+
+.contact-text {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Estilo Base para todos los botones CTA */
+.cta-button {
+    text-decoration: none;
+    padding: 15px 30px;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-size: 1.1em;
+}
+
+/* Botón principal (Naranja/Melocotón para que resalte) */
+.cta-button.acento-bg {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button.acento-bg:hover {
+    background-color: #e59c6c; 
+    transform: translateY(-2px);
+}
+
+
+/* ------------------------------------ */
+/* PÁGINAS ADICIONALES (General) */
+/* ------------------------------------ */
+.page-content {
+    padding: 80px 5%;
+    min-height: 70vh;
+}
+
+.page-title {
+    font-size: 3em;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.secondary-title {
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.intro-text.max-800 {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Historia */
+.historia-text {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+.historia-text p {
+    margin-bottom: 15px;
+}
+
+.bullet-list {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    list-style: disc;
+    padding-left: 40px;
+    font-size: 1.1em;
+}
+
+.historia-image-container, .medida-image-container {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 700px;
+}
+
+.historia-principal-img, .medida-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ------------------------------------ */
+/* SECCIÓN CONOCE A LA CREADORA */
+/* ------------------------------------ */
+.creadora-section {
+    padding: 60px 5%;
+    text-align: center;
+    overflow: hidden; 
+}
+
+.creadora-title {
+    margin-bottom: 40px;
+    color: var(--color-principal); 
+    font-size: 2em;
+}
+
+.creadora-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.creadora-content .creadora-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid var(--color-principal); 
+    border-radius: 10px; 
+    flex-shrink: 0;
+}
+
+.creadora-text {
+    text-align: left;
+    max-width: 500px;
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+.creadora-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid var(--color-principal); 
+    background-color: white; 
+    border-radius: 10px;
+    text-align: center;
+}
+
+.creadora-contact .contact-item {
+    font-size: 1.5em;
+    color: var(--color-principal);
+    margin: 0 15px;
+}
+
+.creadora-contact .contact-detail {
+    width: 100%; 
+    margin: 5px 0;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+
+/* ------------------------------------ */
+/* 5. PIE DE PÁGINA (Footer) */
+/* ------------------------------------ */
+.main-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--color-secundario); /* Turquesa CLARO */
+    color: white;
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--color-acento); 
+}
+
+.contact-info p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ==================================== */
+/* RESPONSIVE (Móviles) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; 
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .product-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .product-details {
+        text-align: center;
+    }
+    
+    .product-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .creadora-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .creadora-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
